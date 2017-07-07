@@ -10,4 +10,5 @@ function setColors() {
 	return setRGB;	
 }
 
-document.getElementById("rgb-text")
+document.getElementBy("").addEventListener("load", )
+//change.

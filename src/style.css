@@ -10,7 +10,6 @@ h1 {
     text-align: center;
     font-weight: normal;
     text-transform: uppercase;
-    background: steelblue;
     margin: 0;
     padding: 20px 0;
 }
@@ -19,6 +18,19 @@ ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
+}
+
+li {
+	float: left;
+	margin: 0 auto;
+}
+li a {
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
 
 #rgb-text {
@@ -27,13 +39,12 @@ ul {
     text-align: center;
     font-weight: normal;
     text-transform: uppercase;
-    background: steelblue;
     margin: 0;
     padding: 20px 0;
 }
 
 #title-bar {
-    background-color: #4682B4;
+	background-color: rgb(70,130,180);
 }
 
 #menu {

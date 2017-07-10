@@ -6,7 +6,7 @@ function setColors() {
     var randRed = randomRGB();
     var randGreen = randomRGB();
     var randBlue = randomRGB();
-    var setRGB = "(" + randRed + "," + randGreen + "," + randBlue + ")";
+    var setRGB = "rgb(" + randRed + "," + randGreen + "," + randBlue + ")";
     return setRGB;
 }
 //set game mode hard/easy
@@ -28,10 +28,13 @@ console.log(key);
 
 //global 'answer' RGB
 var globalRGB = setColors();
+console.log(globalRGB);
+
 
 //append globalRGB to the title
 function displayRGB() {
     document.getElementById("rgb-text").innerHTML += globalRGB;
+    document.getElementById("rgb-text")
 }
 
 //on load, change the rgb being displayed on title.
@@ -42,13 +45,12 @@ var squares = document.getElementsByClassName("square");
 
 function setSquareRGB() {
     for (i = 0; i < squares.length; i++) {
-        var fetchColors = setColors();
-        var squareRand = 'rgb' + fetchColors;
+        var squareRand = setColors();
         // console.log(squareRand);
         if(i === key) {
         	squares[i].style.backgroundColor = globalRGB;
         } else {
-        squares[i].style.backgroundColor = squareRand;
+        	squares[i].style.backgroundColor = squareRand;
         }
     }
 }

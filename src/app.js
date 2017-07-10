@@ -6,7 +6,7 @@ function setColors() {
     var randRed = randomRGB();
     var randGreen = randomRGB();
     var randBlue = randomRGB();
-    var setRGB = "rgb(" + randRed + "," + randGreen + "," + randBlue + ")";
+    var setRGB = "rgb(" + randRed + ", " + randGreen + ", " + randBlue + ")";
     return setRGB;
 }
 //set game mode hard/easy
@@ -41,6 +41,9 @@ function displayRGB() {
 document.getElementById("rgb-text").addEventListener("load", displayRGB());
 
 var squares = document.getElementsByClassName("square");
+var squaresObject = {
+
+}
 
 function setSquareRGB() {
     for (i = 0; i < squares.length; i++) {
@@ -54,8 +57,16 @@ function setSquareRGB() {
     }
 }
 setSquareRGB();
-// function assignChosenOne() {
-// 	for (i = 0; i < squares.length; i++) {
 
-// 	}
-// }
+//handle all the onclick functions 
+document.addEventListener('click',function(e) {
+	e = e || window.event;
+	var target = e.target || e.srcElement;
+	var targetRGB = target.style.backgroundColor;
+	if(targetRGB == globalRGB) {
+		console.log("win");
+	} else {
+		console.log("no " + targetRGB + "||" + globalRGB );
+	}
+});
+console.log("test " + squares.item(0).style.backgroundColor);

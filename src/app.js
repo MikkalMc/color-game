@@ -28,13 +28,12 @@ console.log(key);
 
 //global 'answer' RGB
 var globalRGB = setColors();
-console.log(globalRGB);
+console.log("global " + globalRGB);
 
 
 //append globalRGB to the title
 function displayRGB() {
     document.getElementById("rgb-text").innerHTML += globalRGB;
-    document.getElementById("title-bar").style.backgroundColor = globalRGB;
 }
 
 //on load, change the rgb being displayed on title.
@@ -64,9 +63,10 @@ document.addEventListener('click',function(e) {
 	var target = e.target || e.srcElement;
 	var targetRGB = target.style.backgroundColor;
 	if(targetRGB == globalRGB) {
+		document.getElementById("rgb-text").innerHTML = "YOU WIN";
+		document.getElementById("title-bar").style.backgroundColor = globalRGB;
 		console.log("win");
 	} else {
 		console.log("no " + targetRGB + "||" + globalRGB );
 	}
 });
-console.log("test " + squares.item(0).style.backgroundColor);

@@ -17,11 +17,11 @@ var hardMode = true;
 var key;
 
 function createKey(gameMode) {
-	if(hardMode) {
-		key = Math.floor(Math.random() * (7 - 0));
-	} else {
-		key = Math.floor(Math.random() * (4 - 0));
-	}
+    if (hardMode) {
+        key = Math.floor(Math.random() * (7 - 0));
+    } else {
+        key = Math.floor(Math.random() * (4 - 0));
+    }
 }
 createKey();
 console.log(key);
@@ -34,31 +34,28 @@ console.log(globalRGB);
 //append globalRGB to the title
 function displayRGB() {
     document.getElementById("rgb-text").innerHTML += globalRGB;
-    document.getElementById("rgb-text")
+    document.getElementById("title-bar").style.backgroundColor = globalRGB;
 }
 
 //on load, change the rgb being displayed on title.
 document.getElementById("rgb-text").addEventListener("load", displayRGB());
 
 var squares = document.getElementsByClassName("square");
-// var squareList;
 
 function setSquareRGB() {
     for (i = 0; i < squares.length; i++) {
         var squareRand = setColors();
         // console.log(squareRand);
-        if(i === key) {
-        	squares[i].style.backgroundColor = globalRGB;
+        if (i === key) {
+            squares[i].style.backgroundColor = globalRGB;
         } else {
-        	squares[i].style.backgroundColor = squareRand;
+            squares[i].style.backgroundColor = squareRand;
         }
     }
 }
 setSquareRGB();
-
 // function assignChosenOne() {
 // 	for (i = 0; i < squares.length; i++) {
-		
+
 // 	}
 // }
-
